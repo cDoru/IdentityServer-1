@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="IdentityModel" Version="3.10.1" />
+        <PackageReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Update="Views\Home\Api.cshtml">
+            <Pack>$(IncludeRazorContentInPack)</Pack>
+        </Content>
+        <Content Update="Views\Home\Index.cshtml">
+            <Pack>$(IncludeRazorContentInPack)</Pack>
+        </Content>
+        <Content Update="Views\Home\ResourceOwnerPassword.cshtml">
+          <Pack>$(IncludeRazorContentInPack)</Pack>
+        </Content>
+        <Content Update="Views\Home\UserInteration.cshtml">
+            <Pack>$(IncludeRazorContentInPack)</Pack>
+        </Content>
+    </ItemGroup>
+</Project>

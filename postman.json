@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "9d3deaa9-33b8-4b3f-b2a4-2a0693f80275",
+		"name": "IdentityServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "well-known",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/.well-known/openid-configuration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						".well-known",
+						"openid-configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jwks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/.well-known/openid-configuration/jwks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						".well-known",
+						"openid-configuration",
+						"jwks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "api",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjJlMTViYzk3Y2QwMWE1M2NlZjlmNDk4ZjBkZTg5MTk1IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1Mzc3MjgxNTEsImV4cCI6MTUzNzczMTc1MSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NTAwMC9yZXNvdXJjZXMiLCJhcGkiXSwiY2xpZW50X2lkIjoiY2xpZW50Iiwic2NvcGUiOlsiYXBpIl19.dP7G2DAQk-9nF9jQpYMYfVSGRYTSMGbiQUu2C-H-fd0M7hMq4xk2Zs-pGC0Ii2fODz1T_9U8_ar8yQf7wAMExPEhpYmsmjksxeYNzw03Wkmd2NMILE1Bg6YUOVA9HBmgDdwjO-Uk3iDgiQOQcyucsQZvoOK9gzmHSLNG5Y1oP4f0hkL2E1Dcj0BRNZWR4iLvsDSmGse2y6DMhVuvVSBVX7lDzdcFpmKgRuYdh8aMFwgALL2ipJiTpm2R_x6fmD2sVxztsbLY8OAwKyIAHiKOtQxOIVhHEUevUlif4QliHl4QmxOWO4i7idsIKCQnbWzIXisTFSJSvF4ij6-V893Ywg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5020/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5020",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
